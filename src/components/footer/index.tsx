@@ -9,7 +9,7 @@ export function Footer() {
           {CONTACTS.map((contact) => (
             <div
               key={contact}
-              className="w-full my-2 mx-0 md:w-max text-center border-2 border-black1 rounded-2xl py-2 px-3 md:my-0 md:mx-2"
+              className="w-full my-2 mx-0 md:w-max text-center border border-gray2 rounded-2xl py-2 px-3 md:my-0 md:mx-2"
             >
               <p className="text-sm truncate">{contact}</p>
             </div>
