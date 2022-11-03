@@ -1,5 +1,11 @@
+import { Header } from "./components";
+
 function App() {
-  return <div className="font-bold">app</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default App;
