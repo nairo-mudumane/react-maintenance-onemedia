@@ -4,7 +4,7 @@ import { PageContainer } from "../page-container";
 
 export function Header() {
   return (
-    <div className="py-6 w-full">
+    <section className="py-6 w-full">
       <PageContainer>
         <header className="flex items-center justify-between">
           <Logo className="!m-0" />
@@ -12,6 +12,6 @@ export function Header() {
           <MainButton text="Contacte" />
         </header>
       </PageContainer>
-    </div>
+    </section>
   );
 }
