@@ -16,7 +16,7 @@ export function ModalForm(props: ModalProps) {
           },
         }}
       >
-        <StyledModal className="mt-[7rem] mx-auto max-w-[86%] md:max-w-[520px] lg:max-w-[768px] rounded-lg py-4 px-6">
+        <StyledModal className="mt-[5rem] mx-auto max-w-[86%] md:max-w-[360px] lg:max-w-[520px] rounded-lg py-4 px-6">
           <Form />
         </StyledModal>
       </Modal>
