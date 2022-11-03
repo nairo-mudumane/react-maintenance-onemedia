@@ -1,9 +1,10 @@
-import { Header } from "./components";
+import { Footer, Header } from "./components";
 
 function App() {
   return (
     <>
       <Header />
+      <Footer />
     </>
   );
 }
