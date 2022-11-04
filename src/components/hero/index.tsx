@@ -11,7 +11,7 @@ export function Hero() {
             <div className="w-full flex flex-col md:block">
               <h2 className="text-black text-5xl italic lg:text-5xl font-extrabold uppercase mb-4">
                 Estamos em <br />
-                manutencao
+                manutenção
               </h2>
               <MainButton text="Contacte" />
             </div>
