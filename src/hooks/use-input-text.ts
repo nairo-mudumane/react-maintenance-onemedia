@@ -1,5 +1,5 @@
 import React from "react";
-import { isValidEmail, isValidPassword } from "../utils";
+import { isValidEmail, isValidPassword } from "../resources";
 import type { UseInputText } from "./@types";
 
 export function useInputText<T>(initialValues: T): T & UseInputText {

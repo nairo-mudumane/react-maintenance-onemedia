@@ -1,6 +1,7 @@
-import type { FormEvent } from "react";
-import { useInputText } from "../../hooks";
+import React from "react";
 import { CssTextField } from "./styles";
+import { useFormModal, useInputText } from "../../hooks";
+import { api } from "../../resources";
 
 export function Form() {
   const initialValues = {
@@ -10,10 +11,42 @@ export function Form() {
     message: "",
   };
   const input = useInputText(initialValues);
+  const { onClose: closeModal } = useFormModal();
 
-  async function handleSubmit(event?: FormEvent): Promise<void> {
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [error, setError] = React.useState<string>("");
+  const [isDone, setIsDone] = React.useState<boolean>(false);
+  const [validForm, setValidForm] = React.useState<boolean>(false);
+
+  async function handleSubmit(event?: React.FormEvent): Promise<void> {
     event?.preventDefault();
+
+    const data = {
+      name: input.name,
+      email: input.email,
+      subject: input.subject,
+      message: input.message,
+    };
+
+    window.alert(JSON.stringify(data));
+    input.clear();
+    closeModal();
+
+    // await api.post(`/`)
   }
+
+  React.useEffect(() => {
+    if (
+      input.name !== "" &&
+      input.email !== "" &&
+      input.subject !== "" &&
+      input.message !== ""
+    ) {
+      setValidForm(true);
+    } else {
+      setValidForm(false);
+    }
+  }, [input.name, input.email, input.subject, input.message]);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -30,7 +63,7 @@ export function Form() {
             value={input.name}
             onChange={input.onChange}
             onBlur={input.onBlur}
-            // disabled={loading}
+            disabled={loading}
           />
           <CssTextField
             name="email"
@@ -43,7 +76,7 @@ export function Form() {
             value={input.email}
             onChange={input.onChange}
             onBlur={input.onBlur}
-            // disabled={loading}
+            disabled={loading}
           />
         </div>
 
@@ -58,7 +91,7 @@ export function Form() {
           value={input.subject}
           onChange={input.onChange}
           onBlur={input.onBlur}
-          // disabled={loading}
+          disabled={loading}
         />
 
         <CssTextField
@@ -73,12 +106,15 @@ export function Form() {
           value={input.message}
           onChange={input.onChange}
           onBlur={input.onBlur}
-          // disabled={loading}
+          disabled={loading}
         />
       </div>
 
       <div className="w-max ml-auto mt-6">
-        <button className="bg-orange1 rounded-lg py-2 px-6 hover:bg-gray2">
+        <button
+          disabled={loading || !validForm}
+          className="bg-orange1 rounded-lg py-2 px-6 transition-all delay-75 hover:bg-gray2 disabled:bg-transparent disabled:text-[transparent]"
+        >
           Enviar
         </button>
       </div>
