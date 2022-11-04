@@ -7,6 +7,7 @@ export function ModalForm(props: ModalProps) {
   if (props.open) {
     return (
       <Modal
+        disableAutoFocus
         open={props.open}
         onClose={props.onClose}
         BackdropProps={{
