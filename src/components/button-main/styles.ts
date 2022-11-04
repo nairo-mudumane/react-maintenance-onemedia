@@ -9,4 +9,8 @@ export const StyledButton = styled.button`
     rgba(225, 128, 39, 1) 60%,
     rgba(245, 186, 75, 1)
   );
+
+  &:hover {
+    background: transparent !important;
+  }
 `;

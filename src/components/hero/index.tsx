@@ -7,9 +7,9 @@ export function Hero() {
     <section>
       <PageContainer>
         <div className="my-10 px-0 md:px-8 flex flex-wrap md:flex-nowrap items-center justify-between">
-          <div className="mb-6 flex items-center justify-start">
+          <div className="mb-6 w-full flex items-center justify-start md:w-max">
             <div className="w-full flex flex-col md:block">
-              <h2 className="text-black text-5xl italic lg:text-5xl font-extrabold uppercase mb-4">
+              <h2 className="text-black text-center text-4xl italic md:text-left lg:text-5xl font-extrabold uppercase mb-4">
                 Estamos em <br />
                 manutenção
               </h2>

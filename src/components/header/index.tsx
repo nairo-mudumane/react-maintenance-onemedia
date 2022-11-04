@@ -9,7 +9,7 @@ export function Header() {
         <header className="flex items-center justify-between">
           <Logo className="!m-0" />
 
-          <MainButton text="Contacte" />
+          <MainButton text="Contacte" size="small" />
         </header>
       </PageContainer>
     </section>
